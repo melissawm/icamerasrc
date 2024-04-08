@@ -2869,7 +2869,7 @@ gst_camerasrc_start(GstCamBaseSrc *basesrc)
     return FALSE;
   }
   camerasrc->camera_init = true;
-  ret = camera_device_open(camerasrc->device_id, camerasrc->num_vc);
+  ret = camera_device_open(camerasrc->device_id);
   if (ret < 0) {
      GST_ERROR("CameraId=%d failed to open libcamhal device.", camerasrc->device_id);
      camerasrc->camera_open = false;
