@@ -2506,7 +2506,7 @@ gst_camerasrc_get_caps_info (Gstcamerasrc* camerasrc, GstCaps * caps, int stream
 #if GST_VERSION_MINOR >= 22
   } else {
     GstVideoInfoDmaDrm drm_info;
-    if (!gst_video_info_dma_drm_from_caps(&drm_info, caps)) {
+    if (!gst_video_info_new_from_caps(&drm_info, caps)) {
       GST_ERROR("CameraId=%d, StreamId=%d Caps[dma_drm] can't be parsed",
                 camerasrc->device_id, stream_id);
       return FALSE;
