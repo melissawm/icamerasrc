@@ -3738,7 +3738,7 @@ gst_cam_base_src_negotiate (GstCamBaseSrc * basesrc, GstPad *pad)
     caps = gst_pad_get_current_caps (pad);
 
 #if GST_VERSION_MINOR >= 22
-    basesrc->is_dma_drm_caps = gst_video_is_dma_drm_caps(caps);
+    basesrc->is_dma_drm_caps = gst_video_info_from_caps(caps);
 #endif
 
 #if GST_VERSION_MINOR >= 18

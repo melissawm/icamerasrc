@@ -2495,7 +2495,7 @@ gst_camerasrc_get_caps_info (Gstcamerasrc* camerasrc, GstCaps * caps, int stream
   const gchar *mimetype = gst_structure_get_name (structure);
 
 #if GST_VERSION_MINOR >= 22
-  if (!gst_video_is_dma_drm_caps(caps)) {
+  if (!gst_video_info_from_caps(caps)) {
 #endif
     /* raw caps, parse into video info */
     if (!gst_video_info_from_caps(&info, caps)) {
